@@ -1,6 +1,8 @@
 package net.rexacraft.rexacoins;
 
+import net.minecraft.item.Item;
 import net.rexacraft.rexacoins.proxy.CommonProxy;
+import net.rexacraft.rexacoins.resources.assets.common.block.CashMachine;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -21,7 +23,8 @@ public class RexaCoins {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-
+		Item CashMachine;
+		CashMachine = new CashMachine().setUnlocalizedName("Cash Machine");
 	}
 
 	@EventHandler
