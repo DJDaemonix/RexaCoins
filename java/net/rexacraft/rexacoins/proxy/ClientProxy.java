@@ -5,6 +5,6 @@ public class ClientProxy extends CommonProxy
     @Override
     public void registerRender()
     {
-        System.out.println("methode côté client");
+        System.out.println("Méthode côté client");
     }
 }

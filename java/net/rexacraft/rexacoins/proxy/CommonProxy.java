@@ -4,6 +4,6 @@ public class CommonProxy
 {
     public void registerRender()
     {
-        System.out.println("methode côté serveur");
+        System.out.println("Méthode côté serveur");
     }
 }
