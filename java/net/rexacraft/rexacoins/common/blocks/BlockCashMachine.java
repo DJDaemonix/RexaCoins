@@ -1,5 +1,8 @@
 package net.rexacraft.rexacoins.common.blocks;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -9,12 +12,10 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.rexacraft.rexacoins.RexaCoins;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockCashMachine extends Block
 {
-    private IIcon top, bottom, side, front, back;
+    private IIcon top, front;
 
     public BlockCashMachine()
     {
@@ -26,7 +27,6 @@ public class BlockCashMachine extends Block
     {
         this.blockIcon = register.registerIcon(RexaCoins.MODID + ":cash_machine_side");
         this.top = register.registerIcon(RexaCoins.MODID + ":cash_machine_top");
-        this.bottom = register.registerIcon(RexaCoins.MODID + ":cash_machine_top");
         this.front = register.registerIcon(RexaCoins.MODID + ":cash_machine_front");
     }
 
@@ -45,6 +45,12 @@ public class BlockCashMachine extends Block
         {
             return this.front;
         }
+
+        if(side == 0 || side == 1)
+        {
+            return this.top;
+        }
+
         return this.blockIcon;
     }
 }
