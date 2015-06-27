@@ -1,6 +1,11 @@
 package net.rexacraft.rexacoins.common.items;
 
-public class ItemReplicator
-{
+import net.minecraft.item.Item;
 
+public class ItemReplicator extends Item
+{
+    public ItemReplicator()
+    {
+
+    }
 }

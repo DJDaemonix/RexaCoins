@@ -28,6 +28,7 @@ public class RexaCoins
 
     // Blocks
     public static Block CashMachine;
+    public static Block Replicator;
 
     // Items
     public static Item RexaCoin;
@@ -36,8 +37,10 @@ public class RexaCoins
     public void preInit(FMLPreInitializationEvent event)
     {
         CashMachine = new BlockCashMachine().setBlockName("CashMachine").setCreativeTab(CreativeTabs.tabRedstone);
+        Replicator = new BlockCashMachine().setBlockName("Replicator").setCreativeTab(CreativeTabs.tabRedstone);
 
         GameRegistry.registerBlock(CashMachine, "CashMachine");
+        GameRegistry.registerBlock(Replicator, "Replicator");
 
         RexaCoin = new ItemRexaCoin().setUnlocalizedName("RexaCoin").setCreativeTab(CreativeTabs.tabMisc);
 
