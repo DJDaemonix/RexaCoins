@@ -2,7 +2,7 @@ package net.rexacraft.rexacoins;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
-import net.rexacraft.rexacoins.blocks.CashMachine;
+import net.rexacraft.rexacoins.common.blocks.BlockCashMachine;
 import net.rexacraft.rexacoins.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -30,7 +30,7 @@ public class RexaCoins
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        CashMachine = new CashMachine().setBlockName("CashMachine").setCreativeTab(CreativeTabs.tabMaterials);
+        CashMachine = new BlockCashMachine().setBlockName("CashMachine").setCreativeTab(CreativeTabs.tabMaterials);
 
         GameRegistry.registerBlock(CashMachine, "CashMachine");
     }

@@ -1,4 +1,4 @@
-package net.rexacraft.rexacoins.blocks;
+package net.rexacraft.rexacoins.common.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -12,24 +12,32 @@ import net.rexacraft.rexacoins.RexaCoins;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class CashMachine extends Block
+public class BlockCashMachine extends Block
 {
     private IIcon top, bottom, side, front, back;
 
-    public void registerBlockIcons(IIconRegister iiconRegister)
+    public BlockCashMachine()
     {
-        this.blockIcon = iiconRegister.registerIcon(RexaCoins.MODID + ":CashMachine_side");
-        this.top = iiconRegister.registerIcon(RexaCoins.MODID + ":CashMachine_top");
-        this.bottom = iiconRegister.registerIcon(RexaCoins.MODID + ":CashMachine_top");
-        this.front = iiconRegister.registerIcon(RexaCoins.MODID + ":CashMachine_front");
+        super(Material.iron);
     }
 
+    @Override
+    public void registerBlockIcons(IIconRegister register)
+    {
+        this.blockIcon = register.registerIcon(RexaCoins.MODID + ":cash_machine_side");
+        this.top = register.registerIcon(RexaCoins.MODID + ":cash_machine_top");
+        this.bottom = register.registerIcon(RexaCoins.MODID + ":cash_machine_top");
+        this.front = register.registerIcon(RexaCoins.MODID + ":cash_machine_front");
+    }
+
+    @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase living, ItemStack stack)
     {
-        int direction = MathHelper.floor_double((double)(living.rotationYaw * 4.0F / 360.0F) + 2.5D) & 3;
+        int direction = MathHelper.floor_double(living.rotationYaw * 4.0F / 360.0F + 2.5D) & 3;
         world.setBlockMetadataWithNotify(x, y, z, direction, 2);
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata)
     {
@@ -38,10 +46,5 @@ public class CashMachine extends Block
             return this.front;
         }
         return this.blockIcon;
-    }
-
-    public CashMachine()
-    {
-        super(Material.iron);
     }
 }

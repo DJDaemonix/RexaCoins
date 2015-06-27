@@ -1,1 +1,17 @@
-"authorList": ["DJDaemonix"],
+[
+{
+  "modid": "RexaCoins",
+  "name": "RexaCoins",
+  "description": "Currency system for Rexacraft 3.0",
+  "version": "${version}",
+  "credits": "",
+  "logoFile": "",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["DJ Daemonix", "Superloup10", "Phenix246"],
+  "parent":"",
+  "screenshots": [],
+  "dependencies": []
+}
+]
